@@ -1,0 +1,42 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 2,
+      "title": "WordPress Dev",
+      "description": "WordPress setup with a MySQL database",
+      "note": "Deploys a WordPress instance connected to a MySQL database.",
+      "categories": ["CMS"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
+      "repository": {
+        "url": "https://github.com/KyleFS/docker-dev-stack",
+        "stackfile": "wp-stack.yml"
+      },
+      "env": [
+        {
+          "name": "DEV_WAN_HOSTNAME",
+          "label": "Host Name",
+          "description": "The FQDN to be used. No protocol, no trailing slash. ex: example.com "
+        },
+        {
+          "name": "DEV_UID",
+          "label": "Unique Identifier",
+          "description": "A unique ID for this stack. Alphanumeric only. ex: example "
+        },
+        {
+          "name": "DEV_XDEBUG_MODE",
+          "label": "XDebug mode",
+          "description": "Set the XDebug3 mode. Please consult XDebug documentation. ex: debug,profile ",
+          "default": "none"
+        },
+        {
+          "name": "DEV_XDEBUG_IP",
+          "label": "XDebug Remote IP",
+          "description": "Set the XDebug3 remote connection IP. Usually the IP of your dev machine. Please consult XDebug documentation. ex: 192.168.1.111 ",
+          "default": "127.0.0.1"
+        }
+      ]
+    }
+  ]
+}

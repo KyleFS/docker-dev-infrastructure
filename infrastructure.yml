@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  reverse-proxy:
+    image: traefik:v2.5
+    restart: "no"
+    command:
+      - "--providers.docker"
+      - "--providers.docker.swarmmode"
+      - "--providers.docker.exposedByDefault=false"
+      - "--providers.docker.network=proxy"
+      - "--api.insecure"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.lehttpresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.lehttpresolver.acme.email=${ADMIN_EMAIL}"
+      - "--certificatesresolvers.lehttpresolver.acme.storage=letsencrypt/acme.json"
+    ports:
+      # The HTTP port
+      - "80:80"
+      - "443:443"
+      # The Web UI (enabled by --api.insecure=true)
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "le_data:/letsencrypt"
+    networks:
+      - proxy
+
+  management:
+    image: portainer/portainer-ce:2.9
+    restart: "unless-stopped"
+    command:
+      - "--templates https://raw.githubusercontent.com/KyleFS/docker-dev-infrastructure/master/templates.json"
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "portainer_data:/data"
+    networks:
+      - proxy
+
+volumes:
+  le_data:
+  portainer_data:
+
+networks:
+  proxy:
+    external: true
