@@ -3,7 +3,6 @@ version: '3.8'
 services:
   reverse-proxy:
     image: traefik:v2.5
-    restart: "no"
     command:
       - "--providers.docker"
       - "--providers.docker.swarmmode"
@@ -31,7 +30,6 @@ services:
 
   management:
     image: portainer/portainer-ce:2.11.1
-    restart: "unless-stopped"
     command:
       - "--hide-label dev=hidden"
       - "--templates https://raw.githubusercontent.com/KyleFS/docker-dev-infrastructure/master/portainer-templates.json"
