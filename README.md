@@ -1,6 +1,6 @@
 # Wordpress Devtainer
 
-##Initial Setup
+## Initial Setup
 
 Clone this project and enter the directory.
 ```
