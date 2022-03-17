@@ -31,7 +31,6 @@ services:
   portainer:
     image: portainer/portainer-ce:2.11.1
     command:
-      - "--hide-label dev=hidden"
       - "--templates https://raw.githubusercontent.com/KyleFS/docker-dev-infrastructure/master/portainer-templates.json"
     ports:
       - "8000:8000"
