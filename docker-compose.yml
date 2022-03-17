@@ -30,7 +30,7 @@ services:
       - proxy
 
   management:
-    image: portainer/portainer-ce:2.9
+    image: portainer/portainer-ce:2.11.1
     restart: "unless-stopped"
     command:
       - "--hide-label dev=hidden"
