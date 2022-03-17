@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  reverse-proxy:
+  traefik:
     image: traefik:v2.5
     command:
       - "--providers.docker"
@@ -28,7 +28,7 @@ services:
     networks:
       - proxy
 
-  management:
+  portainer:
     image: portainer/portainer-ce:2.11.1
     command:
       - "--hide-label dev=hidden"
