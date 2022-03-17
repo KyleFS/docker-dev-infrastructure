@@ -23,8 +23,6 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "le_data:/letsencrypt"
-    labels:
-      dev: "hidden"
     deploy:
       mode: global
     networks:
@@ -34,18 +32,34 @@ services:
     image: portainer/portainer-ce:2.11.1
     command:
       - "--templates https://raw.githubusercontent.com/KyleFS/docker-dev-infrastructure/master/portainer-templates.json"
+      - "--tlsskipverify"
+      - "--host tcp://tasks.agent:9001"
     ports:
       - "8000:8000"
+      - "9000:9000"
       - "9443:9443"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "portainer_data:/data"
-    labels:
-        dev: "hidden"
     deploy:
-        mode: global
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [ node.role == manager ]
     networks:
-      - proxy
+      - agent_network
+
+  agent:
+    image: portainer/agent:2.11.1
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/lib/docker/volumes:/var/lib/docker/volumes"
+    networks:
+      - agent_network
+    deploy:
+      mode: global
+      placement:
+        constraints: [ node.platform.os == linux ]
 
 volumes:
   le_data:
@@ -54,3 +68,8 @@ volumes:
 networks:
   proxy:
     external: true
+    driver: overlay
+    attachable: true
+  agent_network:
+    driver: overlay
+    attachable: true
