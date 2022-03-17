@@ -25,6 +25,8 @@ services:
       - "le_data:/letsencrypt"
     labels:
       dev: "hidden"
+    deploy:
+      mode: global
     networks:
       - proxy
 
@@ -40,6 +42,8 @@ services:
       - "portainer_data:/data"
     labels:
         dev: "hidden"
+    deploy:
+        mode: global
     networks:
       - proxy
 
