@@ -15,11 +15,6 @@
       },
       "env": [
         {
-          "name": "DEV_WAN_HOSTNAME",
-          "label": "Host Name",
-          "description": "The FQDN to be used. No protocol, no trailing slash. ex: example.com "
-        },
-        {
           "name": "DEV_UID",
           "label": "Unique Identifier",
           "description": "A unique ID for this stack. Alphanumeric only. ex: example "
