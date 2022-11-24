@@ -3,9 +3,9 @@
   "templates": [
     {
       "type": 2,
-      "title": "WordPress Dev",
-      "description": "WordPress Development",
-      "note": "Deploys a WordPress instance with scaffolding to facilitate dev.",
+      "title": "WordPress Development",
+      "description": "Deploys a WordPress instance with scaffolding to facilitate dev.",
+      "note": "Includes MySQL, PHPMyAdmin, PHP-FPM, SFTP",
       "categories": ["CMS"],
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
