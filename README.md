@@ -17,6 +17,7 @@ nano .env
 Create the 'proxy' network which connects Traefik to the Apache instances.
 ```
 sudo docker network create --driver overlay --attachable proxy
+sudo docker network create --driver overlay --attachable devtainer_agent_network
 ```
 Deploy the infrastructure stack under the name 'devtainer'
 ```
