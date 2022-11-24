@@ -8,7 +8,7 @@ git clone https://github.com/KyleFS/docker-dev-infrastructure devtainer
 cd devtainer
 ```
 
-Fill in the environmental variable file. ADMIN_EMAIL is used for Let's Encrypt SSL.
+Fill in the environmental variable file. DEV_ADMIN_EMAIL is used for Let's Encrypt SSL.
 ```
 mv .env.sample .env
 nano .env

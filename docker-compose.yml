@@ -12,7 +12,7 @@ services:
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.lehttpresolver.acme.tlschallenge=true"
-      - "--certificatesresolvers.lehttpresolver.acme.email=${ADMIN_EMAIL}"
+      - "--certificatesresolvers.lehttpresolver.acme.email=${DEV_ADMIN_EMAIL}"
       - "--certificatesresolvers.lehttpresolver.acme.storage=letsencrypt/acme.json"
     ports:
       # The HTTP port
