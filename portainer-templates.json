@@ -4,8 +4,8 @@
     {
       "type": 2,
       "title": "WordPress Dev",
-      "description": "WordPress setup with a MySQL database",
-      "note": "Deploys a WordPress instance connected to a MySQL database.",
+      "description": "WordPress Development",
+      "note": "Deploys a WordPress instance with scaffolding to facilitate dev.",
       "categories": ["CMS"],
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
