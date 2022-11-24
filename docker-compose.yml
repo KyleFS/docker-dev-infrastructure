@@ -32,7 +32,7 @@ services:
       - proxy
 
   agent:
-    image: portainer/agent:2.16
+    image: portainer/agent:latest
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "/var/lib/docker/volumes:/var/lib/docker/volumes"
@@ -45,7 +45,7 @@ services:
 
   portainer:
     image: portainer/portainer-ce:2.16
-    command: --tlsskipverify --host tcp://tasks.agent:9001 --templates https://raw.githubusercontent.com/KyleFS/docker-dev-infrastructure/master/portainer-templates.json
+    command: --tlsskipverify -l devtainer=hidden --host tcp://tasks.agent:9001 --templates https://raw.githubusercontent.com/KyleFS/docker-dev-infrastructure/master/portainer-templates.json
     ports:
       - "8000:8000"
       - "9000:9000"
