@@ -66,7 +66,7 @@ services:
     restart: unless-stopped
     networks:
       - proxy
-    expose:
+    ports:
       - "9091"
     volumes:
       - "authelia_data:/config"
