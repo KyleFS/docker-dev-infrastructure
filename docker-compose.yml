@@ -63,7 +63,6 @@ services:
 
   authelia:
     image: authelia/authelia
-    restart: unless-stopped
     networks:
       - proxy
     ports:
