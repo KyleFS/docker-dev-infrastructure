@@ -61,9 +61,32 @@ services:
     networks:
       - devtainer_agent_network
 
+  authelia:
+    container_name: authelia
+    image: authelia/authelia
+    restart: unless-stopped
+    networks:
+      - proxy
+    expose:
+      - "9091"
+    volumes:
+      - "authelia_data:/config"
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.authelia.rule=Host(`${DEV_AUTHELIA_URL}`)'
+      - 'traefik.http.routers.authelia.entryPoints=https'
+      - 'traefik.http.routers.authelia.tls=true'
+      - 'traefik.http.middlewares.authelia.forwardAuth.address=http://authelia:9091/api/verify?rd=https%3A%2F%2F${DEV_AUTHELIA_URL}%2F'
+      - 'traefik.http.middlewares.authelia.forwardAuth.trustForwardHeader=true'
+      - 'traefik.http.middlewares.authelia.forwardAuth.authResponseHeaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email'
+      - 'traefik.http.middlewares.authelia-basic.forwardAuth.address=http://authelia:9091/api/verify?auth=basic'
+      - 'traefik.http.middlewares.authelia-basic.forwardAuth.trustForwardHeader=true'
+      - 'traefik.http.middlewares.authelia-basic.forwardAuth.authResponseHeaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email'
+
 volumes:
   le_data:
   portainer_data:
+  authelia_data:
 
 networks:
   proxy:

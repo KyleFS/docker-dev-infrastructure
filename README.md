@@ -28,3 +28,4 @@ In order to use the Wordpress Dev templates, the following Docker secrets also n
 - mysql_root_password
 - wordpress_user
 - wordpress_password
+- AUTHELIA_JWT_SECRET_FILE (It’s strongly recommended this is a Random Alphanumeric String with 64 or more characters.)
