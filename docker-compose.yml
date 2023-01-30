@@ -62,7 +62,6 @@ services:
       - devtainer_agent_network
 
   authelia:
-    container_name: authelia
     image: authelia/authelia
     restart: unless-stopped
     networks:
