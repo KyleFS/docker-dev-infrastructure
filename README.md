@@ -20,10 +20,6 @@ Create the 'proxy' network which connects Traefik to the Apache instances.
 sudo docker network create --driver overlay --attachable proxy
 sudo docker network create --driver overlay --attachable devtainer_agent_network
 ```
-Deploy the infrastructure stack under the name 'devtainer'
-```
-sudo docker stack deploy -c docker-compose.yml devtainer
-```
 
 In order to use the Wordpress Dev templates, the following Docker secrets also need to be set:
 - mysql_root_password
@@ -34,4 +30,11 @@ In order to use the Wordpress Dev templates, the following Docker secrets also n
 Example Docker Secret creation from their documentation:
 ```
 printf "I am a sql password" | docker secret create mysql_root_password -
+```
+
+## Run the stack
+Deploy the infrastructure stack under the name 'devtainer'
+```
+cd /opt/devtainer
+sudo docker stack deploy -c docker-compose.yml devtainer
 ```
