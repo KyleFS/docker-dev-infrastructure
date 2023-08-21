@@ -4,6 +4,7 @@
 
 Clone this project and enter the directory.
 ```
+cd /opt
 git clone https://github.com/KyleFS/docker-dev-infrastructure devtainer
 cd devtainer
 ```
