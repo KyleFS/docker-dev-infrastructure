@@ -1,6 +1,11 @@
 # Wordpress Devtainer
 
-## Initial Setup
+## Prepare Docker
+- Set up the Docker repository(https://docs.docker.com/engine/install/ubuntu/#set-up-the-repository)
+- Set up the Docker Engine(https://docs.docker.com/engine/install/ubuntu/)
+- Set up Docker Compose Plugin
+
+## Prep the stack
 
 Clone this project and enter the directory.
 ```
