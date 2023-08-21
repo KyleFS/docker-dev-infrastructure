@@ -5,19 +5,9 @@
 - Set up the Docker Engine(https://docs.docker.com/engine/install/ubuntu/)
 - Set up Docker Compose Plugin
 
-## Prep the stack
-
-Clone this project and enter the directory.
+Set Up Swarm:
 ```
-cd /opt
-git clone https://github.com/KyleFS/docker-dev-infrastructure devtainer
-cd devtainer
-```
-
-Fill in the environmental variable file. DEV_ADMIN_EMAIL is used for Let's Encrypt SSL.
-```
-mv .env.sample .env
-nano .env
+sudo docker swarm init
 ```
 
 Create the 'proxy' network which connects Traefik to the Apache instances.
@@ -35,6 +25,21 @@ In order to use the Wordpress Dev templates, the following Docker secrets also n
 Example Docker Secret creation from their documentation:
 ```
 printf "I am a sql password" | docker secret create mysql_root_password -
+```
+
+## Prep the stack
+
+Clone this project and enter the directory.
+```
+cd /opt
+git clone https://github.com/KyleFS/docker-dev-infrastructure devtainer
+cd devtainer
+```
+
+Fill in the environmental variable file. DEV_ADMIN_EMAIL is used for Let's Encrypt SSL.
+```
+mv .env.sample .env
+nano .env
 ```
 
 ## Run the stack
