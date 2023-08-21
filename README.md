@@ -42,6 +42,29 @@ mv .env.sample .env
 nano .env
 ```
 
+Create the log directory:
+```
+sudo mkdir /var/log/docker-dev
+sudo chown www-data:www-data /var/log/docker-dev
+```
+
+Create the SFTP config:
+
+```
+sudo mkdir -p /opt/docker-dev/conf/sftp
+sudo nano /opt/docker-dev/conf/sftp/users.conf
+```
+
+Add the following user, pass, UUID, GUID to the SFTP conf.
+```
+wordpress:wordpress:33:33
+```
+
+Create the shared directory
+```
+sudo mkdir -p /opt/docker-dev/shared
+```
+
 ## Run the stack
 Deploy the infrastructure stack under the name 'devtainer'
 ```
