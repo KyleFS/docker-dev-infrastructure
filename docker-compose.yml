@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   traefik:
-    image: traefik:v2.10
+    image: traefik:v2.11
     command:
       - "--providers.docker"
       - "--providers.docker.swarmmode"
@@ -44,7 +44,7 @@ services:
         constraints: [ node.platform.os == linux ]
 
   portainer:
-    image: portainer/portainer-ce:2.20.3
+    image: portainer/portainer-ce:2.21
     command: --tlsskipverify -l devtainer=hidden --host tcp://tasks.agent:9001 --templates https://raw.githubusercontent.com/KyleFS/docker-dev-infrastructure/master/portainer-templates.json
     ports:
       - "8000:8000"
