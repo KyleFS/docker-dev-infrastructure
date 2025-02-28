@@ -31,7 +31,7 @@ for file in "${BACKUP_FILES[@]}"; do
 done
 
 cp devtainer/update.sh update.sh
-chown +x update.sh
+chmod +x update.sh
 
 # Delete backup folder
 rm -rf $BACKUP_DIR
