@@ -29,12 +29,6 @@
           "label": "XDebug mode",
           "description": "Set the XDebug3 mode. Please consult XDebug documentation. ex: debug,profile ",
           "default": "none"
-        },
-        {
-          "name": "DEV_XDEBUG_IP",
-          "label": "XDebug Remote IP",
-          "description": "Set the XDebug3 remote connection IP. Usually the IP of your dev machine. Please consult XDebug documentation. ex: 192.168.1.111 ",
-          "default": "127.0.0.1"
         }
       ]
     }

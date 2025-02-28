@@ -14,6 +14,8 @@ services:
       - "--certificatesresolvers.lehttpresolver.acme.tlschallenge=true"
       - "--certificatesresolvers.lehttpresolver.acme.email=${DEV_ADMIN_EMAIL}"
       - "--certificatesresolvers.lehttpresolver.acme.storage=letsencrypt/acme.json"
+      - "--providers.file.filename=/etc/traefik/extra-hosts.yml"
+      - "--providers.file.watch=true"
     ports:
       # The HTTP port
       - "80:80"
@@ -23,6 +25,7 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "le_data:/letsencrypt"
+      - "./extra-hosts.yml:/etc/traefik/extra-hosts.yml"
     deploy:
       mode: replicated
       replicas: 1
