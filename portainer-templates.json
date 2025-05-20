@@ -28,6 +28,28 @@
         }
       ],
       "maintainer": " https://github.com/KyleFS"
+    },
+    {
+      "id": 2,
+      "type": 2,
+      "title": "Planka Board",
+      "description": "Deploys a Planka Kanban board.",
+      "logo": "https://docs.planka.cloud/images/planka.png",
+      "categories": [],
+      "volumes": [],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/KyleFS/docker-dev-stack",
+        "stackfile": "planka-stack.yml"
+      },
+      "env": [
+        {
+          "name": "PLANKA_HOSTNAME",
+          "label": "Host Name",
+          "description": "The FQDN to be used. No protocol, no trailing slash. ex: example.com "
+        }
+      ],
+      "maintainer": " https://github.com/KyleFS"
     }
   ]
 }
