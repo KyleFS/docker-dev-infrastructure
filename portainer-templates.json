@@ -3,7 +3,7 @@
   "templates": [
     {
       "id": 1,
-      "type": 1,
+      "type": 2,
       "title": "WordPress Development",
       "description": "Deploys a WordPress instance with scaffolding to facilitate dev.",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
