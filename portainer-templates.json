@@ -8,6 +8,8 @@
       "description": "Deploys a WordPress instance with scaffolding to facilitate dev.",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
       "categories": ["CMS"],
+      "volumes": [],
+      "network": "",
       "platform": "linux",
       "repository": {
         "url": "https://github.com/KyleFS/docker-dev-stack",
