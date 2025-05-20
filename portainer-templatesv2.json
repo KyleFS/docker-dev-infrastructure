@@ -1,14 +1,14 @@
 {
-  "version": "3",
+  "version": "2",
   "templates": [
     {
-      "id": 1,
-      "type": 1,
-      "name": "devtainer",
+      "type": 2,
       "title": "WordPress Development",
       "description": "Deploys a WordPress instance with scaffolding to facilitate dev.",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
+      "note": "Includes MySQL, PHPMyAdmin, PHP-FPM, SFTP",
       "categories": ["CMS"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
       "repository": {
         "url": "https://github.com/KyleFS/docker-dev-stack",
         "stackfile": "wp-stack.yml"
@@ -30,8 +30,7 @@
           "description": "Set the XDebug3 mode. Please consult XDebug documentation. ex: debug,profile ",
           "default": "none"
         }
-      ],
-      "maintainer": " https://github.com/KyleFS"
+      ]
     }
   ]
 }
