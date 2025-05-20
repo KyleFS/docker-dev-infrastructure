@@ -16,9 +16,9 @@
       },
       "env": [
         {
-          "name": "DEV_WAN_HOSTNAME",
-          "label": "Host Name",
-          "description": "The FQDN to be used. No protocol, no trailing slash. ex: example.com "
+          "name": "DEV_UID",
+          "label": "Stack Subdomain",
+          "description": "The subdomain to be used with DEV_DOMAIN from .env."
         },
         {
           "name": "DEV_XDEBUG_MODE",
