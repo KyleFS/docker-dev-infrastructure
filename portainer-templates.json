@@ -10,7 +10,7 @@
       "categories": ["CMS"],
       "volumes": [],
       "network": "",
-      "command": "",
+      "command": "/bin/sh",
       "platform": "linux",
       "repository": {
         "url": "https://github.com/KyleFS/docker-dev-stack",
