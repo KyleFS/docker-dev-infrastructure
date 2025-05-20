@@ -9,8 +9,6 @@
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
       "categories": ["CMS"],
       "volumes": [],
-      "network": "",
-      "command": "/bin/sh",
       "platform": "linux",
       "repository": {
         "url": "https://github.com/KyleFS/docker-dev-stack",
@@ -21,11 +19,6 @@
           "name": "DEV_WAN_HOSTNAME",
           "label": "Host Name",
           "description": "The FQDN to be used. No protocol, no trailing slash. ex: example.com "
-        },
-        {
-          "name": "DEV_UID",
-          "label": "Unique Identifier",
-          "description": "A unique ID for this stack. Alphanumeric only. ex: example "
         },
         {
           "name": "DEV_XDEBUG_MODE",
