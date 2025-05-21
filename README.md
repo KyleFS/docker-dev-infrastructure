@@ -66,9 +66,13 @@ sudo mkdir -p /opt/docker-dev/shared
 ```
 
 ## Planka
-Make a entropy secret.
+Make a entropy secret and a default frontend-password.
 ```
 HASH=$(date +%s | openssl dgst -sha256 | awk '{print $2}') && echo "$HASH" | sudo docker secret create planka_secret
+```
+
+```
+printf "<secure pass>" | sudo docker secret create planka_password -
 ```
 
 ## Run the stack
