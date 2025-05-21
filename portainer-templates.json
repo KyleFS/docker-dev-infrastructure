@@ -57,6 +57,22 @@
           "name": "PLANKA_HOSTNAME",
           "label": "Host Name",
           "description": "The FQDN to be used. No protocol, no trailing slash. ex: example.com "
+        },
+        {
+          "name": "DEFAULT_ADMIN_EMAIL",
+          "label": "Planka Admin Email"
+        },
+        {
+          "name": "DEFAULT_ADMIN_USERNAME",
+          "label": "Planka Admin Username"
+        },
+        {
+          "name": "DEFAULT_ADMIN_PASSWORD",
+          "label": "Planka Admin Password"
+        },
+        {
+          "name": "DEFAULT_ADMIN_NAME",
+          "label": "Planka Name"
         }
       ],
       "maintainer": " https://github.com/KyleFS"
