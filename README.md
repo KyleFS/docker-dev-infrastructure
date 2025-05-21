@@ -65,6 +65,12 @@ Create the shared directory
 sudo mkdir -p /opt/docker-dev/shared
 ```
 
+## Planka
+Make a entropy secret.
+```
+HASH=$(date +%s | openssl dgst -sha256 | awk '{print $2}') && echo "$HASH" | sudo docker secret create planka_secret
+```
+
 ## Run the stack
 Deploy the infrastructure stack under the name 'devtainer'
 ```
